@@ -1,0 +1,22 @@
+;Tested on Prusa Slicer
+M220 S100 ;Reset Feedrate
+M221 S100 ;Reset Flowrate
+
+G28 ;Home
+
+G92 E0 ;Reset Extruder
+G1 Z2.0 F3000 ;Move Z Axis up
+G1 X-3.0 Y1 F5000.0 ;Move to start position
+M140 S{first_layer_bed_temperature[0]} ; Set bed temperature
+M109 S[first_layer_temperature] ; Set hotend temperature and wait
+M190 S{first_layer_bed_temperature[0]} ; Set bed temperature and wait
+
+;The Blob
+G1 E50 F500 ;Extrude
+G1 Z10.0 F3000 ;Move Z Axis up
+G1 Y100 F500 ;Move Bed Foward
+
+G92 E0 ;Reset Extruder
+G1 E-1.0000 F1800 ;Retract a bit
+G1 E0.0000 F1800
+;Total Layers: [total_layer_count]
