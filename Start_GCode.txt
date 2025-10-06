@@ -14,7 +14,7 @@ M190 S{first_layer_bed_temperature[0]} ; Set bed temperature and wait
 ;The Blob
 G1 E50 F500 ;Extrude
 G1 Z10.0 F3000 ;Move Z Axis up
-G1 Y100 F500 ;Move Bed Foward
+G1 Y100 F500 ;Move the Y axis forward gently
 
 G92 E0 ;Reset Extruder
 G1 E-1.0000 F1800 ;Retract a bit
