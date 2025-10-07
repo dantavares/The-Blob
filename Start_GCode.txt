@@ -1,6 +1,6 @@
 M221 S100 ;Reset Flowrate
 G92 E0 ;Reset Extruder
-M220 S100 ;Speed rate
+M220 S75 ;Speed rate
 
 G28 ;Home
 
@@ -14,6 +14,8 @@ M190 S{first_layer_bed_temperature[0]} ; Set bed temperature and wait
 G1 Z0.3
 G1 E50 F1000 ;Extrude
 G1 Z10 F10000 ;Move Z Axis up
+M106 S255 ;Set Fan 100%
+G4 S10 ;Wait 
 G1 Y150 F10000 ;Move Bed Foward
 
 G92 E0 ;Reset Extruder
